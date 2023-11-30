@@ -45,15 +45,15 @@ This is a simple blog website made with Ruby on Rails.
 
 ### Key Features <a name="key-features"></a>
 
-Currently it has no features!
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-Currently, this is not an available feature.
+Currently, this project doesn't have many key features beyond a basic Rails website. However, it does have:
+- Built-in models for 
+ - Posts
+ - Comments
+ - Users
+ - And Likes
+ That will work as the database of the project.
+- It also has some methods to handle increments of likes and comments
+- And lastly methods to display the most recent posts and comments
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -98,10 +98,6 @@ rails server
 rspec
 ```
 
-### Deployment
-
-It is not deployed in any other website or service.
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
@@ -119,7 +115,9 @@ It is not deployed in any other website or service.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Say hello to Mars!
+- Make the website interact with the database
+- Add a form to create new users, comments, posts, and likes
+- Design the front-end of the website
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
