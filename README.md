@@ -49,12 +49,6 @@ Currently it has no features!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-Currently, this is not an available feature.
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
@@ -97,10 +91,6 @@ rails server
 ```bash
 rspec
 ```
-
-### Deployment
-
-It is not deployed in any other website or service.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
