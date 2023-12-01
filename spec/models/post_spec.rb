@@ -30,8 +30,6 @@ RSpec.describe Post, type: :model do
 
   context 'Most recent comments' do
     before(:each) do
-      @user = User.create(name: 'User', photo: 'image.png', bio: 'Teacher from Mexico.', posts_counter: 0)
-      @post = Post.create(author: @user, title: 'Test', text: 'This is a test post', comments_counter: 0, likes_counter: 0)
       5.times { |i| Comment.create(post: @post, user: @user, text: (i + 1).to_s) }
     end
 
