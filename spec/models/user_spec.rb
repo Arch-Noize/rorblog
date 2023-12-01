@@ -16,12 +16,12 @@ RSpec.describe User, type: :model do
       expect(@user).to_not be_valid
     end
 
-    it 'should not be valid with the wrong type in counter' do
+    it 'Comments should not be valid with the wrong type in counter' do
       @user.posts_counter = 'zero'
       expect(@user).to_not be_valid
     end
 
-    it 'should not be valid with negative numbers' do
+    it 'Comments should not be valid with negative numbers' do
       @user.posts_counter = -2
       expect(@user).to_not be_valid
     end

@@ -18,13 +18,23 @@ RSpec.describe Post, type: :model do
       expect(@post).to_not be_valid
     end
 
-    it 'should not be valid with the wrong type in counter' do
+    it 'Comments should not be valid with the wrong type in counter' do
       @post.comments_counter = 'zero'
       expect(@post).to_not be_valid
     end
 
-    it 'should not be valid with negative numbers' do
+    it 'Comments should not be valid with negative numbers' do
       @post.comments_counter = -2
+      expect(@post).to_not be_valid
+    end
+
+    it 'Likes should not be valid with the wrong type in counter' do
+      @post.likes_counter = 'zero'
+      expect(@post).to_not be_valid
+    end
+
+    it 'Likes should not be valid with negative numbers' do
+      @post.likes_counter = -2
       expect(@post).to_not be_valid
     end
   end
