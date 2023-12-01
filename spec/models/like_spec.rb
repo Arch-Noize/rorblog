@@ -19,7 +19,7 @@ RSpec.describe Like, type: :model do
 
     it 'is not valid without the user' do
       @like.user = nil
-      expect(Like.new(post: @post)).to_not be_valid
+      expect(@like).to_not be_valid
     end
   end
 
