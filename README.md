@@ -49,8 +49,7 @@ Currently, this project doesn't have many key features beyond a basic Rails webs
  - Users
  - And Likes
  That will work as the database of the project.
-- It also has some methods to handle increments of likes and comments
-- And lastly methods to display the most recent posts and comments
+- The website also has controllers built in for both Posts and Users
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -112,9 +111,9 @@ rspec
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Make the website interact with the database
-- Add a form to create new users, comments, posts, and likes
-- Design the front-end of the website
+- Make the website interact with the database.
+- Add a form to create new users, comments, posts, and likes.
+- Design the front-end of the website.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
