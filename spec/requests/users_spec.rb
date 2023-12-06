@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "Users", type: :request do
+RSpec.describe 'Users', type: :request do
   context 'Test /index' do
     before :each do
-      get "/users/"
+      get '/users/'
     end
 
     it 'returns successful response if status is correct' do

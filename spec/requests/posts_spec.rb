@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Posts", type: :request do
+RSpec.describe 'Posts', type: :request do
   context 'Testing /index' do
     before :each do
       get '/users/:user_id/posts'
@@ -25,8 +25,10 @@ RSpec.describe "Posts", type: :request do
 
   context 'Testing /show' do
     let(:user) { User.create(name: 'User', photo: 'image.png', bio: 'Test.', posts_counter: 0) }
-    let(:post) { Post.create(author: user, title: 'Test', text: 'This is a test.', comments_counter: 0,
-                      likes_counter: 0) }
+    let(:post) do
+      Post.create(author: user, title: 'Test', text: 'This is a test.', comments_counter: 0,
+                  likes_counter: 0)
+    end
 
     before :each do
       get "/users/:user_id/posts/#{post.id}"
