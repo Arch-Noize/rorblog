@@ -10,5 +10,10 @@
     </head>
     <body>
         <h1>In this section, show a list of users.</h1>
+        <ul>
+            <% @users.each do |user| %> 
+                <li><%= user.name %></li>
+            <% end %>
+        </ul>
     </body>
 </html>
