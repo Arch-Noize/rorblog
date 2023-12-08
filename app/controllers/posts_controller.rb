@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
+  before_action :set_user, only: %i[index new create]
+
   def index
-    @user = User.find(params[:user_id])
-    @posts = Post.where(author_id: params[:user_id]).order(id: :asc)
-    @posts = @posts.paginate(page: params[:page])
+    @posts = @user.posts.build
+    @posts = @user.posts.paginate(page: params[:page])
   end
 
   def show
@@ -14,18 +15,22 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.author = current_user
+    Rails.logger.debug "POST PARAMS: #{post_params.inspect}"
+    @post = @user.posts.build(post_params)
     if @post.save
-      flash[:sucess] = 'Post created successfuly!'
-      redirect_to user_posts_url
+      flash[:success] = 'Post created successfully!'
+      redirect_to user_posts_path(@user)
     else
       flash.now[:error] = 'Error, the post cannot be created!'
-      render :new, locals: { post: @post }
+      render :new
     end
   end
 
   private
+
+  def set_user
+    @user = User.find(params[:user_id])
+  end
 
   def post_params
     params.require(:post).permit(:title, :text)

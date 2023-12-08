@@ -3,13 +3,12 @@
 <% flash.each do |name, msg| -%>
   <%= content_tag :div, msg, class: name %>
 <% end -%>
-<%= form_with model: [:user, :post, @comment], data: { turbo: false }, local: true do |f| %>
+<%= form_with(model: [@user, @post], local: true) do |form| %>
   <div>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %><br>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %><br>
-    <%= f.submit "Post" %>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %><br>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %><br>
+    <%= form.submit "Post" %>
   </div>
-
 <% end %>
