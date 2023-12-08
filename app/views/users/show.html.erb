@@ -1,5 +1,5 @@
 <div>
-  <% @user.three_most_recent_posts.each_with_index do |post, i| %>
+  <% @user.recent_posts.each do |post| %>
     <li>
       <%= link_to "/users/#{@user.id}/posts/#{post.id}", id: "post" do %>
         <%= render partial: "shared/post", locals: { post: post } %>
