@@ -6,8 +6,11 @@
   <% @post.comments.each do |comment| %>
     <li>
       <p>
-        <%= comment.user.name %>: <%= comment.text %>
+        <%= comment.author.name %>: <%= comment.text %>
       </p>
     </li>
   <% end %>
 </ul>
+
+<%= render partial: "shared/like", locals: { post: @post } %>
+<%= link_to 'New Comment', new_user_post_comment_path(post_id: params[:id]) %>

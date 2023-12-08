@@ -1,0 +1,14 @@
+<h2>Add a New Post</h2>
+
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+<% end -%>
+<%= form_with(model: [@user, @post], local: true) do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %><br>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %><br>
+    <%= form.submit "Post" %>
+  </div>
+<% end %>

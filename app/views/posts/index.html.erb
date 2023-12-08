@@ -2,6 +2,11 @@
    <%= render partial: "shared/user", locals: { user: @user } %>
 </div>
 
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+<% end -%>
+<%= link_to 'New Post', new_user_post_path(@user) %>
+
 <ul>
   <% @posts.each do |post| %>
     <li>
@@ -12,7 +17,7 @@
         <ul class="info" id="comments">
           <% post.recent_comments.each do |comment| %>
             <li>
-              <p><%= comment.user.name %>: <%= comment.text %></p>
+              <p><%= comment.author.name %>: <%= comment.text %></p>
             </li>
           <% end %>
         </ul>

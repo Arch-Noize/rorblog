@@ -113,7 +113,7 @@ rspec
 
 - ~~Make the website interact with the database.~~
 - ~~Added wireframe of design to website~~
-- Add a form to create new users, comments, posts, and likes.
+- ~~Add a form to create new users, comments, posts, and likes.~~
 - Design the front-end of the website.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
