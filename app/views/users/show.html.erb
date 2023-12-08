@@ -1,5 +1,14 @@
+<div id="user-container">
+  <%= render partial: "users/user_info", locals: { user: @user } %>
+</div>
+
 <div>
-  <% @user.recent_posts.each do |post| %>
+  <h3>Biography</h3>
+  <p><%= @user.bio %></p>
+</div>
+
+<div>
+  <% @user.recent_posts do |post| %>
     <li>
       <%= link_to "/users/#{@user.id}/posts/#{post.id}", id: "post" do %>
         <%= render partial: "shared/post", locals: { post: post } %>
@@ -7,3 +16,5 @@
     </li>
   <% end %>
 </div>
+
+<%= link_to "See all posts", "/users/#{@user.id}/posts?page=1" %>

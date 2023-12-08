@@ -2,4 +2,21 @@
    <%= render partial: "shared/user", locals: { user: @user } %>
 </div>
 
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= link_to "/users/#{@user.id}/posts/#{post.id}", id: "post" do %>
+        <%= render partial: "shared/post", locals: { post: post } %>
+      <% end %>
+      <ul>
+        <% post.recent_comments.each do |comment| %>
+          <li>
+            <p><%= comment.user.name %>: <%= comment.text %></p>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
+
 <%= will_paginate %>
