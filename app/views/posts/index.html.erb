@@ -2,6 +2,11 @@
    <%= render partial: "shared/user", locals: { user: @user } %>
 </div>
 
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+  <% end -%>
+  <%= link_to 'New Post', new_post_path %>
+
 <ul>
   <% @posts.each do |post| %>
     <li>
