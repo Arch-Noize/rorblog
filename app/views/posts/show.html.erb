@@ -1,11 +1,10 @@
 <div>
-   <%= render partial: "shared/post", locals: { post: @post } %>
-   <p> @post.text </p>
+    <%= render partial: "shared/post", locals: { post: @post } %>
 </div>
 
 <ul>
   <% @post.comments.each do |comment| %>
-    <li >
+    <li>
       <p><%= comment.user.name %>: <%= comment.text %></p>
     </li>
   <% end %>
