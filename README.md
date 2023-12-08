@@ -111,7 +111,8 @@ rspec
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Make the website interact with the database.
+- ~~Make the website interact with the database.~~
+- ~~Added wireframe of design to website~~
 - Add a form to create new users, comments, posts, and likes.
 - Design the front-end of the website.
 
