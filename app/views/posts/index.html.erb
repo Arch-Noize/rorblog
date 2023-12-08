@@ -8,15 +8,17 @@
       <%= link_to "/users/#{@user.id}/posts/#{post.id}", id: "post" do %>
         <%= render partial: "shared/post", locals: { post: post } %>
       <% end %>
-      <ul>
-        <% post.recent_comments.each do |comment| %>
-          <li>
-            <p><%= comment.user.name %>: <%= comment.text %></p>
-          </li>
-        <% end %>
-      </ul>
+      <% if post.recent_comments.any? %>
+        <ul class="info" id="comments">
+          <% post.recent_comments.each do |comment| %>
+            <li>
+              <p><%= comment.user.name %>: <%= comment.text %></p>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
     </li>
   <% end %>
 </ul>
 
-<%= will_paginate %>
+<%= will_paginate @posts %>
