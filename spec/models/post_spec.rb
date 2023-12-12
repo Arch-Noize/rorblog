@@ -41,7 +41,7 @@ RSpec.describe Post, type: :model do
 
   context 'Most recent comments' do
     before(:each) do
-      5.times { |i| Comment.create(post: @post, user: @user, text: (i + 1).to_s) }
+      5.times { |i| Comment.create(post: @post, author: @user, text: (i + 1).to_s) }
     end
 
     it 'should return the five comments' do
