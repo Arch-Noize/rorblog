@@ -2,8 +2,8 @@ class PostsController < ApplicationController
   before_action :set_user, only: %i[index new create]
 
   def index
-    @posts = @user.posts.build
-    @posts = @user.posts.paginate(page: params[:page])
+    @posts = @user.posts.includes(:author).build
+    @posts = @user.posts.includes(:author).paginate(page: params[:page])
   end
 
   def show
