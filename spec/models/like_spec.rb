@@ -5,7 +5,7 @@ RSpec.describe Like, type: :model do
     @user = User.create(name: 'User', photo: 'image.png', bio: 'Teacher from Mexico.', posts_counter: 0)
     @post = Post.create(author: @user, title: 'Test', text: 'This is a test post', comments_counter: 0,
                         likes_counter: 0)
-    @like = Like.create(user: @user, post: @post)
+    @like = Like.create(author: @user, post: @post)
   end
 
   context 'when creating a Like' do
@@ -19,14 +19,14 @@ RSpec.describe Like, type: :model do
     end
 
     it 'is not valid without the user' do
-      @like.user = nil
+      @like.author = nil
       expect(@like).to_not be_valid
     end
   end
 
   context 'Updating likes' do
     before(:each) do
-      7.times { Like.create(user: @user, post: @post) }
+      7.times { Like.create(author: @user, post: @post) }
     end
 
     it 'keeps track of likes and equals to 8' do

@@ -17,10 +17,6 @@ RSpec.describe 'Users', type: :request do
     it 'renders the correct view file' do
       expect(response).to render_template(:index)
     end
-
-    it 'renders placeholder text correctly' do
-      expect(response.body).to include('<h1>In this section, show a list of users.</h1>')
-    end
   end
 
   context 'Test /show' do
@@ -42,7 +38,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'renders placeholder text correctly' do
-      expect(response.body).to include('<h1>In this section, show a selected user from the list.</h1>')
+      expect(response.body).to include('<h2>User</h2>')
     end
   end
 end
