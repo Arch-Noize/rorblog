@@ -2,7 +2,7 @@ require 'rails_helper'
 RSpec.describe 'Testing User#show view, it' do
   before :each do
     @user = User.create(name: 'Santiago', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'bio test',
-                         posts_counter: 0)
+                        posts_counter: 0)
     @post1 = Post.create(author_id: @user.id, title: 'Test1', text: 'first post', likes_counter: 0,
                          comments_counter: 0)
     @post2 = Post.create(author_id: @user.id, title: 'Test2', text: 'second post', likes_counter: 0,
@@ -38,15 +38,15 @@ RSpec.describe 'Testing User#show view, it' do
     expect(page).to have_link('See all posts')
   end
 
-  it "When I click a user's post, it redirects me to that post's show page." do
+  it "should redirect to post/show, when a post is clicked." do
     click_on 'Test1'
     expect(page).to have_content 'first post'
     expect(current_path).to eq(user_post_path(@user, @post1))
   end
 
-  it " When I click to see all posts, it redirects me to the user's post's index page. " do
+  it "should redirect to post/index, when a button is clicked. " do
     within('.pagination') do
-        find_link('See all posts').click
+      find_link('See all posts').click
     end
     expect(current_path).to eq(user_posts_path(@user.id))
   end
