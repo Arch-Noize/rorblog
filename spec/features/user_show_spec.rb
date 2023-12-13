@@ -38,13 +38,13 @@ RSpec.describe 'Testing User#show view, it' do
     expect(page).to have_link('See all posts')
   end
 
-  it "should redirect to post/show, when a post is clicked." do
+  it 'should redirect to post/show, when a post is clicked.' do
     click_on 'Test1'
     expect(page).to have_content 'first post'
     expect(current_path).to eq(user_post_path(@user, @post1))
   end
 
-  it "should redirect to post/index, when a button is clicked. " do
+  it 'should redirect to post/index, when a button is clicked. ' do
     within('.pagination') do
       find_link('See all posts').click
     end
