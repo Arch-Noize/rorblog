@@ -46,7 +46,7 @@ RSpec.describe 'Testing Post index view, it' do
     expect(page).to have_content('Likes: 0')
   end
 
-  it 'should redirect to that post, when a post is clicked.' do
+  it 'should redirect to post/show, when a post is clicked.' do
     within('.post') do
       find('h3', text: 'Test1').click
     end
