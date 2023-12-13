@@ -15,7 +15,7 @@ RSpec.describe 'Testing User index view, it', type: :feature do
   end
 
   it 'can see the number of posts each user has written' do
-    expect(page).to have_content("Number of posts")
+    expect(page).to have_content('Number of posts')
     expect(page).to have_text("Ben\nNumber of posts: 4")
     expect(page).to have_text("Mike\nNumber of posts: 8")
   end
