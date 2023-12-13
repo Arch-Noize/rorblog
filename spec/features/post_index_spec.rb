@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.describe 'Testing Post index view, it' do
+RSpec.describe 'Testing Post#index view, it' do
   before :each do
     @user = User.create(name: 'Santiago', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', posts_counter: 0)
     @post1 = Post.create(author_id: @user.id, title: 'Test1', text: 'first post', likes_counter: 0,

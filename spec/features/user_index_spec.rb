@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Testing User index view, it', type: :feature do
+RSpec.describe 'Testing User#index view, it', type: :feature do
   before :each do
     @user1 = User.create(name: 'Santiago', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', posts_counter: 2)
     @user2 = User.create(name: 'Ben', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', posts_counter: 4)
