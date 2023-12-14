@@ -139,22 +139,54 @@ img {
 .auth {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   margin: 2rem 0;
   width: 100%;
   border-radius: 4px;
 }
 
 .field {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.field input{
+  width: 80%;
   margin: 1rem 0;
 }
 
 .min {
+  margin-top: -1rem;
   font-size: 0.8em;
   font-style: italic;
   font-weight: 300;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered > * {
+  margin: 0 0.3rem;
+}
+
+.actions.centered {
+  width: 80%; /* Adjust this value as needed */
+  margin: 1rem auto;
+}
+
+.actions.centered > input[type="submit"] {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+/* Links */
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
