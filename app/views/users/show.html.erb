@@ -17,6 +17,6 @@
   <% end %>
 </ul>
 
-<button class="pagination">
-  <%= link_to "See all posts", "/users/#{@user.id}/posts?page=1" %>
-</button>
+<%= link_to "See all posts", "/users/#{@user.id}/posts?page=1", class: "button" %>
+
+<%= link_to "Back", :back, class: "button" %>

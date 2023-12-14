@@ -40,6 +40,7 @@ img {
   box-shadow: 6px 6px 0 0 #000;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  margin: 1rem 0;
 }
 
 .button:hover {
@@ -104,6 +105,23 @@ img {
   margin: -2rem 0 2rem 0;
 }
 
+/* Nav */
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  color: #fff;
+  border: 2px solid black;
+  margin-bottom: 1em;
+}
+
+.navbar > * {
+  margin: 0 1rem;
+}
+
 /* Pagination */
 
 .pagination {
@@ -114,21 +132,6 @@ img {
 .pagination a {
   text-decoration: underline;
   color: #3139ad;
-}
-
-/* Nav */
-
-.navbar {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 1rem;
-  width: 100%;
-  color: #fff;
-}
-
-.navbar > * {
-  margin: 0 1rem;
 }
 
 /* Forms */
@@ -146,6 +149,7 @@ img {
 .field {
   display: flex;
   flex-direction: column;
+  width: 100%;
   margin: 1rem 0;
 }
 
