@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  has_many :comments
+  has_many :comments, dependent: :destroy, counter_cache: true
   has_many :like
   belongs_to :author, class_name: 'User'
 
