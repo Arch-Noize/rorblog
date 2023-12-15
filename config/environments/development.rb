@@ -6,7 +6,7 @@ Rails.application.configure do
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
-  config.enable_reloading = true
+  config.cache_classes = false
 
   # Do not eager load code on boot.
   config.eager_load = false
@@ -36,26 +36,10 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
-  # Config default url options for ActionMailer
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
-
-  config.action_mailer.delivery_method = :smtp
-  
-  config.action_mailer.perform_deliveries = true
-
-  config.action_mailer.smtp_settings = {
-    :user_name => 'f011029bdd44d0', 
-    :password => 'b70387978eb827', 
-    :address => 'smtp.mailtrap.io',
-    :domain => 'smtp.mailtrap.io',
-    :port => '2525',
-    :authentication => :cram_md5
-  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -72,9 +56,6 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
-  # Highlight code that enqueued background job in logs.
-  config.active_job.verbose_enqueue_logs = true
-
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
@@ -87,6 +68,5 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  # Raise error when a before_action's only/except options reference missing actions
-  config.action_controller.raise_on_missing_callback_actions = true
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
