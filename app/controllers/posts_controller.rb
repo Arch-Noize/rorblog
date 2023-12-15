@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     @post = Post.includes(:likes).find(params[:id])
     Comment.where(post_id: @post.id).destroy_all
     @author = @post.author
-    @author.decrement!(:post_counter)
+    @author.decrement!(:posts_counter)
     @post.likes.destroy_all
     @post.destroy
 
