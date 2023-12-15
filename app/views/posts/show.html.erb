@@ -1,6 +1,5 @@
-<div>
-    <%= render partial: "shared/post", locals: { post: @post } %>
-</div>
+<%= render partial: "shared/post", locals: { post: @post } %>
+<%= render partial: "shared/like", locals: { post: @post } %>
 
 <ul class="info">
   <% @post.comments.each do |comment| %>
@@ -12,6 +11,5 @@
   <% end %>
 </ul>
 
-<%= render partial: "shared/like", locals: { post: @post } %>
-<%= link_to 'New Comment', new_user_post_comment_path(post_id: params[:id]) class: "button" %>
+<%= link_to 'New Comment', new_user_post_comment_path(post_id: params[:id]), class: "button" %>
 <%= link_to "Back", :back, class: "button" %>
