@@ -7,6 +7,7 @@
       <p>
         <%= comment.author.name %>: <%= comment.text %>
       </p>
+      <%= button_to 'Delete Comment', new_user_post_comment_path(user_id: @post.author_id, id: @post.id), method: :delete, class: "button" %>
     </li>
   <% end %>
 </ul>
