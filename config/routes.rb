@@ -8,3 +8,9 @@ Rails.application.routes.draw do
     end
   end
 end
+
+namespace :api do
+  resources :users, only: [:index]
+    end
+  end
+end
