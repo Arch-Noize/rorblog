@@ -1,5 +1,5 @@
 class Api::V1::CommentsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :create]
+  skip_before_action :authenticate_user!, only: %i[index create]
   skip_before_action :verify_authenticity_token
 
   def index
@@ -15,9 +15,9 @@ class Api::V1::CommentsController < ApplicationController
     @comment.author = user
 
     if @comment.save
-        render json: 'Comment saved successfully!'
+      render json: 'Comment saved successfully!'
     else
-        render json: { error: 'Error creating comment', details: @comment.errors.full_messages }
+      render json: { error: 'Error creating comment', details: @comment.errors.full_messages }
     end
   end
 
