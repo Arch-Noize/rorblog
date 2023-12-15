@@ -14,6 +14,17 @@ class Post < ApplicationRecord
     Comment.where(post_id: id).order(created_at: :desc).limit(5)
   end
 
+  def destroy
+    @post = Post.includes(:likes).find(params[:id])
+    Comment.where(post_id: @post.id).destroy_all
+    @author = @post.author
+    @author.decrement!(:post_counter)
+    @post.likes.destroy_all
+    @post.destroy
+
+    redirect_to user_posts_path(id: @author.id), notice: 'Post successfully deleted'
+  end
+
   private
 
   def set_defaults
