@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
-  has_many :comments
-  has_many :like
+  has_many :comments, dependent: :destroy, counter_cache: true
+  has_many :likes
   belongs_to :author, class_name: 'User'
 
   validates :title, presence: true, length: { maximum: 250 }
