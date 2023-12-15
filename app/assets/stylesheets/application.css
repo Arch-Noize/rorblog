@@ -29,7 +29,7 @@ img {
   border: 1px solid #000;
 }
 
-button {
+.button {
   display: flex;
   align-self: center;
   justify-content: center;
@@ -40,9 +40,10 @@ button {
   box-shadow: 6px 6px 0 0 #000;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  margin: 1rem 0;
 }
 
-button:hover {
+.button:hover {
   scale: 1.1;
 }
 
@@ -104,6 +105,25 @@ button:hover {
   margin: -2rem 0 2rem 0;
 }
 
+/* Nav */
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  color: #fff;
+  border: 2px solid black;
+  margin-bottom: 1em;
+}
+
+.navbar > * {
+  margin: 0 1rem;
+}
+
+/* Pagination */
+
 .pagination {
   margin: 0 auto;
   color: #f0f0f0;
@@ -112,4 +132,61 @@ button:hover {
 .pagination a {
   text-decoration: underline;
   color: #3139ad;
+}
+
+/* Forms */
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.field input {
+  width: 80%;
+  margin: 1rem 0;
+}
+
+.min {
+  margin-top: -1rem;
+  font-size: 0.8em;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered > * {
+  margin: 0 0.3rem;
+}
+
+.actions.centered {
+  width: 80%; /* Adjust this value as needed */
+  margin: 1rem auto;
+}
+
+.actions.centered > input[type="submit"] {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+/* Links */
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

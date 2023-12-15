@@ -13,4 +13,5 @@
 </ul>
 
 <%= render partial: "shared/like", locals: { post: @post } %>
-<%= link_to 'New Comment', new_user_post_comment_path(post_id: params[:id]) %>
+<%= link_to 'New Comment', new_user_post_comment_path(post_id: params[:id]) class: "button" %>
+<%= link_to "Back", :back, class: "button" %>

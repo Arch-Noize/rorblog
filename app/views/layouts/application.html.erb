@@ -10,6 +10,22 @@
   </head>
 
    <body class="container">
+      <% unless current_page?(new_user_registration_path) || current_page?(new_user_session_path) %>
+        <nav class="navbar">
+          <% if user_signed_in? %>
+            <%= link_to 'Reset Password', edit_user_registration_path %>
+            <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to 'Sign up', new_user_registration_path %>
+            <%= link_to 'Login', new_user_session_path %>
+          <% end %>
+        </nav>
+      <% end %>
+
+      <h1>Blog App on Rails</h1>
+
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
    </body>
 </html>

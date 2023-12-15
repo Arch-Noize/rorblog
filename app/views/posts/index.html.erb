@@ -5,7 +5,7 @@
 <% flash.each do |name, msg| -%>
   <%= content_tag :div, msg, class: name %>
 <% end -%>
-<%= link_to 'New Post', new_user_post_path(@user) %>
+<%= link_to 'New Post', new_user_post_path(@user), class: "button" %>
 
 <ul>
   <% @posts.each do |post| %>
@@ -27,3 +27,5 @@
 </ul>
 
 <%= will_paginate @posts %>
+
+<%= link_to "Back", :back, class: "button" %>
