@@ -114,6 +114,8 @@ rspec
 - ~~Make the website interact with the database.~~
 - ~~Added wireframe of design to website~~
 - ~~Add a form to create new users, comments, posts, and likes.~~
+- ~~Add Authorization and Authentication to my blogs.~~
+- ~~Add API endpoints~~
 - Design the front-end of the website.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
