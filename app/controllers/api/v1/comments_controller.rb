@@ -1,23 +1,27 @@
 class Api::V1::CommentsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :create]
+  skip_before_action :verify_authenticity_token
 
   def index
-    @comments = current_user.comments
+    post = Post.find(params[:post_id])
+    @comments = post.comments
     render json: @comments
   end
 
   def create
-    @comment = Comment.new(comment_params)
-    @comment.user = current_user
+    user = User.find(params[:user_id])
+    post = user.posts.find(params[:post_id])
+    @comment = post.comments.new(comment_params)
+    @comment.author = user
+
     if @comment.save
-      render json: @comment, status: :created
+        render json: 'Comment saved successfully!'
     else
-      render json: @comment.errors, status: :unprocessable_entity
+        render json: { error: 'Error creating comment', details: @comment.errors.full_messages }
     end
   end
 
-  private
-
   def comment_params
-    params.require(:comment).permit(:author_id, :text, :post_id)
+    params.require(:comment).permit(:text)
   end
 end
